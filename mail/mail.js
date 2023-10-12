@@ -6,7 +6,10 @@ const members = [
     "paperino@prova.test",
     "pluto@prova.test"
 ]
-// VERIFICA SE L'UTENTE PUò ACCEDERE
+// STATO DI PRESENZA
+const presente = document.querySelector(".alert-success");
+const assente = document.querySelector(".alert-danger");
+// VERIFICA SE L'UTENTE PUO' ACCEDERE
 const button = document.querySelector(".btn-primary")
 button.addEventListener("click", function() {
     // catturo il value inserito dall'utente
@@ -24,14 +27,12 @@ button.addEventListener("click", function() {
         }
     }
     // se l'utente è presente nella lista e ha "presenza=true" allora stampo un messaggio di conferma
-    const presente = document.querySelector(".alert-success");
-    const assente = document.querySelector(".alert-danger");
     if(presenza === true) {
         presente.innerHTML =
         `
-        <h2>
-        Bentornato <span>${userEmail}</span>
-        </h2>
+        <h3>
+        Bentornato <span>${userEmail}</span>!
+        </h3>
         `
         presente.classList.remove("d-none");
         assente.classList.add("d-none");
@@ -40,11 +41,20 @@ button.addEventListener("click", function() {
     else {
         assente.innerHTML = 
         `
+        <h3>
         Ciao ${userEmail}, non sei ancora registrato!!
+        </h3>
         `
         assente.classList.remove("d-none");
         presente.classList.add("d-none");
     }
+}
+)
+// RESET 
+const reset = document.querySelector(".btn-secondary");
+reset.addEventListener("click", function() {
+    presente.classList.add("d-none");
+    assente.classList.add("d-none");
 }
 )
 
