@@ -5,10 +5,12 @@ function getRndInteger(min, max) {
 // catturo i bottoni con una variabile
 const btnGenerate = document.querySelector(".btn-primary")
 const btnReset = document.querySelector(".btn-secondary")
-// creo i div dove inserire la mossa dell'utente e quella del computer
+// creo i div dove inserire mosse, vittoria/sconfitta
 const extContainer = document.querySelector(".container")
 const userPlay = document.createElement("div");
 const pcPlay = document.createElement("div");
+const victory = document.createElement("div");
+const loss = document.createElement("div");
 
 btnGenerate.addEventListener("click", function() {
     // faccio generare due numeri casuali tramite button
@@ -28,8 +30,24 @@ btnGenerate.addEventListener("click", function() {
     ${pcNum}
     `
     extContainer.append(pcPlay);
-
-    console.log(userNum, userPlay, pcNum, pcPlay)
-    // se il numero dell'utente è maggiore di quello del pc
+    // se il numero dell'utente è maggiore di quello del pc allora stampo "vittoria"
+    if(userNum > pcNum) {
+        victory.innerHTML = 
+        `
+        <div>Hai vinto!</div>
+        `
+        extContainer.append(victory);
+        loss.remove();
+    } 
+    // se il numero dell'utente è minore del pc allora stampo "sconfitta"
+    else {
+        loss.innerHTML = 
+        `
+        <div>Hai perso...</div>
+        <span>Riprova</span>
+        `
+        extContainer.append(loss);
+        victory.remove();
+    }
 }
 )
