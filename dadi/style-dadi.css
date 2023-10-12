@@ -1,4 +1,64 @@
+/* general */
+:root{
+    --picton-blue: #4DACD7ff;
+    --dark-green: #013423ff;
+    --rich-black: #000C1Dff;
+    --tigers-eye: #B06B0Eff;
+    --falu-red: #7D1C1Fff;
+}
 body
 {
     font-family: 'Nunito', sans-serif;
+}
+#generator {
+    background-image: url(img/biliardo.jpeg);
+    background-size: cover;
+    position: relative;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.bg-user{
+    background-color: var(--dark-green);
+}
+.bg-pc{
+    background-color: var(--picton-blue);
+}
+.bg-ball-user{
+    background-color: var(--rich-black);
+}
+.bg-ball-pc{
+    background-color: var(--falu-red);
+}
+.big-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+#explore {
+    background-image: url(img/universe.jpg);
+    background-size: cover;
+    position: relative;
+}
+#explore::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.489);
+}
+.result {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding: 50px;
+    border-radius: 10px;
 }
