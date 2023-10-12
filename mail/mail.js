@@ -30,9 +30,7 @@ button.addEventListener("click", function() {
     if(presenza === true) {
         presente.innerHTML =
         `
-        <h3>
         Bentornato <span>${userEmail}</span>!
-        </h3>
         `
         presente.classList.remove("d-none");
         assente.classList.add("d-none");
@@ -41,9 +39,7 @@ button.addEventListener("click", function() {
     else {
         assente.innerHTML = 
         `
-        <h3>
         Ciao ${userEmail}, non sei ancora registrato!!
-        </h3>
         `
         assente.classList.remove("d-none");
         presente.classList.add("d-none");
